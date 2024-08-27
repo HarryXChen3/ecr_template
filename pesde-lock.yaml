@@ -1,0 +1,83 @@
+name: subzerostudios/fflabyssoftesting
+specifiers:
+  centau/ecr:
+    0.8.0:
+    - repo: https://www.github.com/centau/ecr
+      rev: b80288f
+      realm: shared
+    - ecr
+  wally#aloroid/gorp-ecr:
+    0.2.0-rc3:
+    - wally: wally#aloroid/gorp-ecr
+      version: ^0.2.0-rc3
+      index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+    - gorp
+  wally#centau/vide:
+    0.2.0:
+    - wally: wally#centau/vide
+      version: ^0.2.0
+      index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+    - vide
+children:
+  centau/ecr:
+    0.8.0:
+      pkg_ref:
+        type: git
+        name: centau/ecr
+        version: 0.8.0
+        repo_url: https://www.github.com/centau/ecr
+        rev: b80288fec8c450b3076d43b9f7b78959b37892a6
+      realm: shared
+  wally#aloroid/gorp:
+    0.2.0-rc3:
+      pkg_ref:
+        type: wally
+        name: wally#aloroid/gorp
+        version: 0.2.0-rc3
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#aloroid/vide-with-types:
+        - 0.2.7
+        - vide
+      realm: shared
+  wally#aloroid/gorp-ecr:
+    0.2.0-rc3:
+      pkg_ref:
+        type: wally
+        name: wally#aloroid/gorp-ecr
+        version: 0.2.0-rc3
+        index_url: https://github.com/UpliftGames/wally-index
+      dependencies:
+        wally#aloroid/gorp:
+        - 0.2.0-rc3
+        - gorp
+        wally#centau/ecr:
+        - 0.8.0
+        - ecr
+      realm: shared
+  wally#aloroid/vide-with-types:
+    0.2.7:
+      pkg_ref:
+        type: wally
+        name: wally#aloroid/vide-with-types
+        version: 0.2.7
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#centau/ecr:
+    0.8.0:
+      pkg_ref:
+        type: wally
+        name: wally#centau/ecr
+        version: 0.8.0
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared
+  wally#centau/vide:
+    0.2.0:
+      pkg_ref:
+        type: wally
+        name: wally#centau/vide
+        version: 0.2.0
+        index_url: https://github.com/UpliftGames/wally-index
+      realm: shared

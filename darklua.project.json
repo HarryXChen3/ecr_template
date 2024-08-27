@@ -1,0 +1,56 @@
+{
+    "name": "FFLAbyssOfTesting",
+    "tree": {
+        "$className": "DataModel",
+  
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "$ignoreUnknownInstances": true,
+
+            "Packages": {
+                "$path": "Packages",
+                "$ignoreUnknownInstances": true
+            },
+
+            "Shared": {
+                "$path": "build/shared" ,
+                "$ignoreUnknownInstances": true
+            },
+
+            "Client": {
+                "$path": "build/client",
+                "$ignoreUnknownInstances": true
+            }
+        },
+
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$ignoreUnknownInstances": true,
+
+            "main_server": {
+                "$path": "build/main/main_server",
+                "$ignoreUnknownInstances": true
+            },
+
+            "Server": {
+                "$path": "build/server",
+                "$ignoreUnknownInstances": true
+            }
+        },
+
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "$ignoreUnknownInstances": true,
+        
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "$ignoreUnknownInstances": true,
+
+                "main_client": {
+                    "$path": "build/main/main_client",
+                    "$ignoreUnknownInstances": true
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "fflabyssoftesting",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "Packages": {
+        "$path": "Packages",
+        "$ignoreUnknownInstances": true
+      },
+      "Shared": {
+        "$path": "src/shared",
+        "$ignoreUnknownInstances": true
+      },
+      "Client": {
+        "$path": "src/client",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$ignoreUnknownInstances": true,
+      "main_server": {
+        "$path": "src/main/main_server",
+        "$ignoreUnknownInstances": true
+      },
+      "Server": {
+        "$path": "src/server",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "$ignoreUnknownInstances": true,
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$ignoreUnknownInstances": true,
+        "main_client": {
+          "$path": "src/main/main_client",
+          "$ignoreUnknownInstances": true
+        }
+      }
+    }
+  }
+}
