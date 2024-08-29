@@ -1,0 +1,116 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "install rokit",
+            "type": "shell",
+            "command": "(Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted) ; ${workspaceFolder}\\scripts\\rokit_install.ps1",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "install tools",
+            "type": "shell",
+            "command": "rokit install ; pesde install",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "install",
+            "dependsOn": ["install rokit", "install tools"],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        },
+        {
+            "label": "rojo serve",
+            "type": "shell",
+            "command": "rojo serve ${workspaceFolder}\\darklua.project.json",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "darklua build",
+            "type": "shell",
+            "command": "darklua process src build -c .darklua.json --watch",
+            "isBackground": true,
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": {
+                "owner": "darklua",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": [
+                    {
+                        "regexp": "^->\\sunable\\sto\\sparse\\s`([^`]*)`:\\s(error|warning)\\soccurred while creating ast:\\s([^.]*).\\s\\(starting\\sfrom\\sline\\s(\\d+),\\scharacter\\s(\\d+)\\sand\\sending\\son\\sline\\s(\\d+),\\scharacter\\s(\\d+).*$(\\r\\n|\\r|\\n)additional\\sinformation:\\s*(.*)$",
+                        "file": 1,
+                        "severity": 2,
+                        "code": 3,
+                        "line": 4,
+                        "column": 5,
+                        "endLine": 6,
+                        "endColumn": 7,
+                        "message": 9,
+                        "loop": true
+                    }
+                ],
+                "background": {
+                    "activeOnStart": true,
+                    // sketchy workaround
+                    "beginsPattern": "^successfully ?processed \\d+ files \\(in \\d+\\.?\\d*ms\\)",
+                    "endsPattern": "^successfully ?processed \\d+ files \\(in \\d+\\.?\\d*ms\\)"
+                }
+            }
+        },
+        {
+            "label": "zap",
+            "type": "shell",
+            "command": "zap ${workspaceFolder}\\config.zap",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "serve",
+            "dependsOn": ["zap", "darklua build", "rojo serve"],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        }
+    ]
+}

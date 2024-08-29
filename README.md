@@ -2,10 +2,14 @@
 
 uh template I guess.
 
+## installation
+
+run vsc "install" task
+
 ## tools
 
-1. pesde@0.4.7
-2. aftman@0.3.0
+1. rokit@latest
+2. pesde@0.4.7
 3. rojo@7.4.0
 4. darklua@0.12.0
 5. zap@0.6.1
