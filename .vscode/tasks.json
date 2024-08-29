@@ -74,7 +74,7 @@
             "type": "shell",
             "command": "rm -rf ${workspaceFolder}/build",
             "windows": {
-                "command": "rmdir \"${workspaceFolder}/build\" /s /q",
+                "command": "if exist \"${workspaceFolder}/build\" rmdir \"${workspaceFolder}/build\" /s /q",
                 "options": {
                     "shell": {
                         "executable": "C:\\Windows\\System32\\cmd.exe",
