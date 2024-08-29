@@ -1,0 +1,11 @@
+{
+    "luau-lsp.types.definitionFiles": [
+        "typedefs.luau"
+    ],
+    "luau-lsp.require.directoryAliases": {
+        "client": "src/client/",
+        "server": "src/server/",
+        "shared": "src/shared/",
+        "packages": "packages/"
+    }
+}
