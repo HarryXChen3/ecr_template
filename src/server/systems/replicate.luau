@@ -1,30 +1,60 @@
 local ecr = require("packages/ecr")
 
-local ffl = require("shared/ffl")
+local pc = require("shared/pc")
 local zap = require("shared/zap/server")
 local zapqueue = require("shared/zap/queue")
 local serde = require("shared/serde")
 
 local world = require("server/world")
 
--- component names that do not replicate
-local hz0 = {
+--[[
+	Component names that do not replicate (i.e. replicate at 0 Hz)
+	```
+	local hz0: Array<string> = {
+		"BobComponent",
+		"AliceComponent"
+	}
+	```
+]]
+local hz0: Array<string> = {
 	
 }
 
-local add_only = {
+--[[
+	Component names that only replicate their addition (to entities) and changes, but not removal
+	```
+	local add_only: Array<string> = {
+		"BobComponent",
+		"AliceComponent"
+	}
+	```
+]]
+local add_only: Array<string> = {
 	
 }
 
--- components that replicate changes over udp, removals are still tcp
-local udp = {
+--[[
+	Component names that replicate over UDP (unreliable)
+	```
+	local udp: Array<string> = {
+		"BobComponent",
+		"AliceComponent"
+	}
+	```
+]]
+local udp: Array<string> = {
 	
 }
 
-local function diff_table(include: {string}?)
+--[[
+	Creates an empty diff table using components found in the definition file.
+	@param include whitelist for component names to include
+	@return the empty diff table
+]]
+local function diff_table(include: {string}?): pc.WorldDiff
 	local diff = {} do
 		diff.changes = {}
-		for cname in next, ffl do
+		for cname in next, pc do
 			if include and not table.find(include, cname) then
 				continue
 			end
@@ -43,12 +73,16 @@ local function diff_table(include: {string}?)
 	return diff
 end
 
-local function delta_context()
+--[[
+	Returns a function that, when invoked, replicates changes in the world to clients.
+	@return the replication function
+]]
+local function delta_context(): () -> ()
 	local context = world:context()
 
 	local updated_ffl = {} :: Map<string, Map<ecr.entity, unknown>>
 
-	for cname, ctype in next, ffl do
+	for cname, ctype in next, pc do
 		local updated = {}
 		updated_ffl[cname] = updated
 
@@ -80,7 +114,7 @@ local function delta_context()
 		local udp_diff = diff_table(udp)
 
 		for cname, updated in updated_ffl do
-			local is_tag = ecr.is_tag(ffl[cname])
+			local is_tag = ecr.is_tag(pc[cname])
 			local serialize = serde.ser[cname]
 
 			for id, value in updated do
@@ -108,12 +142,12 @@ local function delta_context()
 
 		-- tcp diff
 		if next(diff.changes) or next(diff.destroyed) then
-			zap.replicate_world.fire_list(context:get(ffl.ConnectedPlayers), diff)
+			zap.replicate_world.fire_list(context:get(pc.ConnectedPlayers), diff)
 		end
 		
 		-- udp diff
 		if next(udp_diff.changes) or next(udp_diff.destroyed) then
-			zap.udp_replicate_world.fire_list(context:get(ffl.ConnectedPlayers), udp_diff)
+			zap.udp_replicate_world.fire_list(context:get(pc.ConnectedPlayers), udp_diff)
 		end
 
 		for _, updated in updated_ffl do
@@ -122,10 +156,15 @@ local function delta_context()
 	end
 end
 
+--[[
+	Replicates the entire world to a player.
+	@param player the player to replicate to
+	@return the replication function
+]]
 local function full_context(player: Player)
 	local diff = diff_table()
 
-	for cname, ctype in next, ffl do
+	for cname, ctype in next, pc do
 		local is_tag = ecr.is_tag(ctype)
 		local serialize = serde.ser[cname]
 		local changes = diff.changes[cname]
@@ -146,9 +185,15 @@ end
 
 local context = delta_context()
 
--- clients ready for initial context
+--[[
+	Queue for new clients that are ready to recieve the initial context (world)
+]]
 local client_ready = zapqueue(zap.client_ready)
 
+--[[
+	Replicates the entire world to new players, and the change in the world for existing ones.
+	@param dt deltatime
+]]
 return function(dt: number)
 	for player in client_ready do
 		full_context(player)
