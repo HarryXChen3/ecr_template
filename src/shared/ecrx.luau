@@ -5,6 +5,13 @@ type Handle = ecr.Handle
 type Queue<T...> = ecr.Queue<T...>
 type Registry = ecr.Registry
 
+--[[
+    Queue for old component values, whether they were changed or removed altogether.
+    @param reg the registry
+    @param ctype the component to queue for
+    @param filter the filter to apply to entities (handles)
+    @return the queue
+]]
 local function queue_old_values<T>(reg: Registry, ctype: T, filter: ((Handle) -> boolean)?): Queue<T>
     local q = ecr.queue()
 
@@ -23,6 +30,13 @@ local function queue_old_values<T>(reg: Registry, ctype: T, filter: ((Handle) ->
     return q
 end
 
+--[[
+    Queue for old component values and their respective entities, whether they were changed or removed altogether.
+    @param reg the registry
+    @param ctype the component to queue for
+    @param filter the filter to apply to entities (handles)
+    @return the queue
+]]
 local function queue_old_entities_and_values<T>(reg: Registry, ctype: T, filter: ((Handle) -> boolean)?): Queue<entity, T>
     local q = ecr.queue()
 
@@ -40,10 +54,13 @@ local function queue_old_entities_and_values<T>(reg: Registry, ctype: T, filter:
     return q
 end
 
-local function gameloop(
-    scheduler: any,
-    systems: {Map<string, number> | ModuleScript}
-)
+--[[
+    Creates a gameloop using a scheduler and systems.
+    @param scheduler the scheduler to use
+    @param systems the systems to schedule, and their frequencies
+    @return the gameloop function
+]]
+local function gameloop(scheduler: any, systems: {{i: number} | ModuleScript}): (dt: number) -> ()
     local runs: Map<number, number> = {}
     local names: Array<string> = {}
     local frame = 0

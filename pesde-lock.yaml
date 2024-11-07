@@ -14,9 +14,9 @@ specifiers:
       realm: shared
     - gorp
   wally#centau/vide:
-    0.2.0:
+    0.3.1:
     - wally: wally#centau/vide
-      version: ^0.2.0
+      version: ^0.3.1
       index_url: https://github.com/UpliftGames/wally-index
       realm: shared
     - vide
@@ -74,10 +74,10 @@ children:
         index_url: https://github.com/UpliftGames/wally-index
       realm: shared
   wally#centau/vide:
-    0.2.0:
+    0.3.1:
       pkg_ref:
         type: wally
         name: wally#centau/vide
-        version: 0.2.0
+        version: 0.3.1
         index_url: https://github.com/UpliftGames/wally-index
       realm: shared
