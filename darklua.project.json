@@ -8,18 +8,18 @@
             "$ignoreUnknownInstances": true,
 
             "Packages": {
-                "$path": "Packages",
-                "$ignoreUnknownInstances": true
+                "$path": "packages",
+                "$ignoreUnknownInstances": false
             },
 
             "Shared": {
                 "$path": "build/shared" ,
-                "$ignoreUnknownInstances": true
+                "$ignoreUnknownInstances": false
             },
 
             "Client": {
                 "$path": "build/client",
-                "$ignoreUnknownInstances": true
+                "$ignoreUnknownInstances": false
             }
         },
 
@@ -29,12 +29,12 @@
 
             "main_server": {
                 "$path": "build/main/main_server",
-                "$ignoreUnknownInstances": true
+                "$ignoreUnknownInstances": false
             },
 
             "Server": {
                 "$path": "build/server",
-                "$ignoreUnknownInstances": true
+                "$ignoreUnknownInstances": false
             }
         },
 
@@ -48,7 +48,7 @@
 
                 "main_client": {
                     "$path": "build/main/main_client",
-                    "$ignoreUnknownInstances": true
+                    "$ignoreUnknownInstances": false
                 }
             }
         }

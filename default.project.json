@@ -6,16 +6,16 @@
       "$className": "ReplicatedStorage",
       "$ignoreUnknownInstances": true,
       "Packages": {
-        "$path": "Packages",
-        "$ignoreUnknownInstances": true
+        "$path": "packages",
+        "$ignoreUnknownInstances": false
       },
       "Shared": {
         "$path": "src/shared",
-        "$ignoreUnknownInstances": true
+        "$ignoreUnknownInstances": false
       },
       "Client": {
         "$path": "src/client",
-        "$ignoreUnknownInstances": true
+        "$ignoreUnknownInstances": false
       }
     },
     "ServerScriptService": {
@@ -23,11 +23,11 @@
       "$ignoreUnknownInstances": true,
       "main_server": {
         "$path": "src/main/main_server",
-        "$ignoreUnknownInstances": true
+        "$ignoreUnknownInstances": false
       },
       "Server": {
         "$path": "src/server",
-        "$ignoreUnknownInstances": true
+        "$ignoreUnknownInstances": false
       }
     },
     "StarterPlayer": {
@@ -38,7 +38,7 @@
         "$ignoreUnknownInstances": true,
         "main_client": {
           "$path": "src/main/main_client",
-          "$ignoreUnknownInstances": true
+          "$ignoreUnknownInstances": false
         }
       }
     }
