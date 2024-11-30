@@ -1,4 +1,4 @@
-local ecr = require "packages/ecr"
+local ecr = require("@packages/ecr")
 
 type entity = ecr.entity
 type Handle = ecr.Handle

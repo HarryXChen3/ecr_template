@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local gorp = require("packages/gorp")
-local ecrx = require("shared/ecrx")
+local gorp = require("@packages/gorp")
+local ecrx = require("@shared/ecrx")
 
 local client = ReplicatedStorage.Client
 local systems = client.systems

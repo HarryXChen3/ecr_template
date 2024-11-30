@@ -1,7 +1,7 @@
 local ServerScriptService = game:GetService("ServerScriptService")
 
-local gorp = require("packages/gorp")
-local ecrx = require("shared/ecrx")
+local gorp = require("@packages/gorp")
+local ecrx = require("@shared/ecrx")
 
 local server = ServerScriptService.Server
 local systems = server.systems

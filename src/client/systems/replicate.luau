@@ -1,11 +1,11 @@
-local ecr = require("packages/ecr")
+local ecr = require("@packages/ecr")
 
-local pc = require("shared/pc")
-local zap = require("shared/zap/client")
-local zapqueue = require("shared/zap/queue")
-local serde = require("shared/serde")
+local pc = require("@shared/pc")
+local zap = require("@shared/zap/client")
+local zapqueue = require("@shared/zap/queue")
+local serde = require("@shared/serde")
 
-local world = require("client/world")
+local world = require("@client/world")
 
 --[[
     Processes the world diff sent by the server, and replicates the changes required.

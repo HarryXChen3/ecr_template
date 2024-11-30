@@ -1,4 +1,4 @@
-local ecr = require("packages/ecr")
+local ecr = require("@packages/ecr")
 
 --[[
     The client world.

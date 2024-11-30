@@ -14,10 +14,10 @@
                 "name": "path",
 
                 "sources": {
-                    "client": "src/client",
-                    "server": "src/server",    
-                    "shared": "src/shared",
-                    "packages": "Packages"
+                    "@client": "src/client",
+                    "@server": "src/server",    
+                    "@shared": "src/shared",
+                    "@packages": "Packages"
                 }
             },
 

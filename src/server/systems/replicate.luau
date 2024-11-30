@@ -1,11 +1,11 @@
-local ecr = require("packages/ecr")
+local ecr = require("@packages/ecr")
 
-local pc = require("shared/pc")
-local zap = require("shared/zap/server")
-local zapqueue = require("shared/zap/queue")
-local serde = require("shared/serde")
+local pc = require("@shared/pc")
+local zap = require("@shared/zap/server")
+local zapqueue = require("@shared/zap/queue")
+local serde = require("@shared/serde")
 
-local world = require("server/world")
+local world = require("@server/world")
 
 --[[
 	Component names that do not replicate (i.e. replicate at 0 Hz)

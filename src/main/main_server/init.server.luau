@@ -1,11 +1,11 @@
 local RunService = game:GetService("RunService")
 
-local gorp = require("packages/gorp")
+local gorp = require("@packages/gorp")
 
-local pc = require("shared/pc")
-local world = require("server/world")
+local pc = require("@shared/pc")
+local world = require("@server/world")
 
-local loop = require("server/gameloop")
+local loop = require("@server/gameloop")
 
 gorp.names(pc)
 gorp.hook_world(world)

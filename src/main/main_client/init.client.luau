@@ -1,12 +1,12 @@
 local RunService = game:GetService("RunService")
 
-local gorp = require("packages/gorp")
-local zap = require("shared/zap/client")
+local gorp = require("@packages/gorp")
+local zap = require("@shared/zap/client")
 
-local pc = require("shared/pc")
-local world = require("client/world")
+local pc = require("@shared/pc")
+local world = require("@client/world")
 
-local loop = require("client/gameloop")
+local loop = require("@client/gameloop")
 
 local gorp_client = gorp.get_client()
 gorp.names(pc)

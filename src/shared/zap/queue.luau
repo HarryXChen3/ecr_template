@@ -1,4 +1,4 @@
-local ecr = require("packages/ecr")
+local ecr = require("@packages/ecr")
 
 type set_callback<T...> = ((T...) -> ()) -> ()
 type on<T...> = ((T...) -> ()) -> ()

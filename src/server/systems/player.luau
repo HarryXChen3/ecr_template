@@ -1,12 +1,12 @@
 local Players = game:GetService("Players")
 
-local ecr = require("packages/ecr")
+local ecr = require("@packages/ecr")
 
-local zap = require("shared/zap/server")
-local zapqueue = require("shared/zap/queue")
-local pc = require("shared/pc")
+local zap = require("@shared/zap/server")
+local zapqueue = require("@shared/zap/queue")
+local pc = require("@shared/pc")
 
-local world = require("server/world")
+local world = require("@server/world")
 
 local client_ready = zapqueue(zap.client_ready)
 local player_removing = ecr.queue(Players.PlayerRemoving)
