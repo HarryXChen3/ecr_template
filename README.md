@@ -9,13 +9,13 @@ run vsc "install" task
 ## tools
 
 1. rokit@latest
-2. pesde@0.4.7
-3. rojo@7.4.0
-4. darklua@0.12.0
-5. zap@0.6.1
+2. pesde@0.5.0-rc.14
+3. rojo@7.4.4
+4. darklua@0.14.0
+5. zap@0.6.14
 
 ## packages
 
 1. ecr@b80288f
-2. gorp-ecr@0.2.0-rc3
-3. vide@0.2.0
+2. ebba@52b2018
+3. vide@caa9eaf

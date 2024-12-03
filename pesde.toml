@@ -1,0 +1,25 @@
+name = "harryxchen3/ecr_template"
+version = "0.1.0"
+description = "ecr template"
+authors = ["harryxchen3"]
+repository = "https://github.com/HarryXChen3/ecr_template"
+license = "MIT"
+
+[target]
+environment = "roblox"
+
+[scripts]
+roblox_sync_config_generator = ".pesde/roblox_sync_config_generator.luau"
+sourcemap_generator = ".pesde/sourcemap_generator.luau"
+
+[indices]
+default = "https://github.com/pesde-pkg/index"
+
+[overrides]
+"ebba>ecr" = { repo = "https://github.com/centau/ecr.git", rev = "b80288f" }
+"ebba>vide,ebba>pebble>vide" = { repo = "https://github.com/centau/vide.git", rev = "caa9eaf"}
+
+[dependencies]
+ecr = { repo = "https://github.com/centau/ecr.git", rev = "b80288f"}
+ebba = { repo = "https://github.com/alicesaidhi/jabby.git", rev = "52b2018"}
+vide = { repo = "https://github.com/centau/vide.git", rev = "caa9eaf"}

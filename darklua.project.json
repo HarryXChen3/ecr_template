@@ -8,7 +8,7 @@
             "$ignoreUnknownInstances": true,
 
             "Packages": {
-                "$path": "packages",
+                "$path": "roblox_packages",
                 "$ignoreUnknownInstances": false
             },
 
