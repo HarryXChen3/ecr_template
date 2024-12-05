@@ -11,8 +11,8 @@ run vsc "install" task
 1. rokit@latest
 2. pesde@0.5.0-rc.14
 3. rojo@7.4.4
-4. darklua@0.14.0
-5. zap@0.6.14
+4. darklua@0.14.1
+5. zap@0.6.15
 
 ## packages
 
