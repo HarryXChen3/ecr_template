@@ -1,5 +1,5 @@
 [tools]
 rojo = "rojo-rbx/rojo@7.4.4"
-darklua = "seaofvoices/darklua@0.14.0"
-zap = "red-blox/zap@0.6.14"
+darklua = "seaofvoices/darklua@0.14.1"
+zap = "red-blox/zap@0.6.15"
 pesde = "daimond113/pesde@0.4.7"
