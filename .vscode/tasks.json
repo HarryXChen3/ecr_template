@@ -15,10 +15,7 @@
                     }
                 }
             },
-            // maybe works? untested
-            "linux": {
-                "command": "chmod +x ${workspaceFolder}/scripts/rokit_install.sh && ${workspaceFolder}/scripts/rokit_install.sh"
-            },
+            "command": "chmod +x ${workspaceFolder}/scripts/rokit_install.sh && ${workspaceFolder}/scripts/rokit_install.sh",
             "presentation": {
                 "echo": true,
                 "reveal": "always",

@@ -4,7 +4,10 @@ uh template I guess.
 
 ## installation
 
-run vsc "install" task
+1. in vsc, press shift+p
+2. type "task install"
+
+this will install rokit and along with all tools below
 
 ## tools
 
