@@ -7,18 +7,14 @@ uh template I guess.
 1. in vsc, press shift+p
 2. type "task install"
 
-this will install rokit and along with all tools below
-
 ## tools
 
-1. rokit@latest
-2. pesde@0.4.7
-3. rojo@7.4.4
-4. darklua@0.16.0
-5. zap@0.6.17
+1. [pesde](https://github.com/pesde-pkg/pesde)@0.6.x
+2. [rojo](https://github.com/rojo-rbx/rojo)@7.4.4
+3. [darklua](https://github.com/seaofvoices/darklua)@0.16.0
+4. [zap](https://github.com/red-blox/zap)@0.6.19
 
 ## packages
 
-1. ecr@b80288f
-2. gorp-ecr@0.2.0-rc3
-3. vide@0.3.1
+1. [ecr](https://github.com/centau/ecr)@04e5ea8
+2. [vide](https://github.com/centau/vide)@37e8e05

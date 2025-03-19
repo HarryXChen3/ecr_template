@@ -1,0 +1,29 @@
+name = "harryxchen3/ecr_template"
+version = "0.1.0"
+description = "ecr template"
+authors = ["harryxchen3"]
+repository = "https://github.com/HarryXChen3/ecr_template"
+license = "MIT"
+
+[target]
+environment = "roblox"
+
+[indices]
+default = "https://github.com/pesde-pkg/index"
+
+[engines]
+lune = "^0.8.9"
+
+[scripts]
+roblox_sync_config_generator = ".pesde/scripts/roblox_sync_config_generator.luau"
+sourcemap_generator = ".pesde/scripts/sourcemap_generator.luau"
+
+[dev_dependencies]
+scripts = { name = "pesde/scripts_rojo", version = "^0.1.0", target = "lune" }
+rojo = { name = "pesde/rojo", version = "^7.4.4", target = "lune" }
+zap = { name = "pesde/zap", version = "^0.6.19", target = "lune" }
+darklua = { name = "pesde/darklua", version = "^0.16.0", target = "lune" }
+
+[dependencies]
+ecr = { repo = "https://github.com/centau/ecr", rev = "04e5ea8" }
+vide = { repo = "https://github.com/centau/vide", rev = "37e8e05" }

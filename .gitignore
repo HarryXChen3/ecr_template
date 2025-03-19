@@ -1,3 +1,5 @@
 sourcemap.json
 packages/
+*_packages/
+.pesde/
 build/
