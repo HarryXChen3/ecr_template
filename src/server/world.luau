@@ -5,5 +5,4 @@ local ecr = require("@packages/ecr")
 ]]
 local world = ecr.registry()
 
--- must be cloned for gorp
-return table.clone(world)
+return world

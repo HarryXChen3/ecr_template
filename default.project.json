@@ -1,46 +1,56 @@
 {
-  "name": "fflabyssoftesting",
-  "tree": {
-    "$className": "DataModel",
-    "ReplicatedStorage": {
-      "$className": "ReplicatedStorage",
-      "$ignoreUnknownInstances": true,
-      "Packages": {
-        "$path": "packages",
-        "$ignoreUnknownInstances": false
-      },
-      "Shared": {
-        "$path": "src/shared",
-        "$ignoreUnknownInstances": false
-      },
-      "Client": {
-        "$path": "src/client",
-        "$ignoreUnknownInstances": false
-      }
-    },
-    "ServerScriptService": {
-      "$className": "ServerScriptService",
-      "$ignoreUnknownInstances": true,
-      "main_server": {
-        "$path": "src/main/main_server",
-        "$ignoreUnknownInstances": false
-      },
-      "Server": {
-        "$path": "src/server",
-        "$ignoreUnknownInstances": false
-      }
-    },
-    "StarterPlayer": {
-      "$className": "StarterPlayer",
-      "$ignoreUnknownInstances": true,
-      "StarterPlayerScripts": {
-        "$className": "StarterPlayerScripts",
-        "$ignoreUnknownInstances": true,
-        "main_client": {
-          "$path": "src/main/main_client",
-          "$ignoreUnknownInstances": false
+    "name": "ECRTemplate",
+    "tree": {
+        "$className": "DataModel",
+
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+            "$ignoreUnknownInstances": true,
+            
+            "Packages": {
+                "$path": "packages",
+                "$ignoreUnknownInstances": false
+            },
+
+            "Shared": {
+                "$path": "src/shared",
+                "$ignoreUnknownInstances": false
+            },
+
+            "Client": {
+                "$path": "src/client",
+                "$ignoreUnknownInstances": false
+            }
+        },
+
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+            "$ignoreUnknownInstances": true,
+
+            "main_server": {
+                "$path": "src/main/main_server",
+                "$ignoreUnknownInstances": false
+            },
+
+            "Server": {
+                "$path": "src/server",
+                "$ignoreUnknownInstances": false
+            }
+        },
+
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+            "$ignoreUnknownInstances": true,
+
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+                "$ignoreUnknownInstances": true,
+
+                "main_client": {
+                    "$path": "src/main/main_client",
+                    "$ignoreUnknownInstances": false
+                }
+            }
         }
-      }
     }
-  }
 }

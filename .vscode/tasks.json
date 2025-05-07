@@ -29,7 +29,31 @@
         {
             "label": "install tools",
             "type": "shell",
-            "command": "rokit install ; pesde install",
+            "command": "rokit install",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "install packages",
+            "type": "shell",
+            "windows": {
+                "command": "${workspaceFolder}\\scripts\\rucksack_install.ps1",
+                "options": {
+                    "shell": {
+                        "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                        "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command"]
+                    }
+                }
+            },
+            "dependsOn": ["install tools"],
+            "dependsOrder": "sequence",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -42,7 +66,7 @@
         },
         {
             "label": "install",
-            "dependsOn": ["install rokit", "install tools"],
+            "dependsOn": ["install rokit", "install tools", "install packages"],
             "dependsOrder": "sequence",
             "problemMatcher": []
         },

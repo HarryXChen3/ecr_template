@@ -1,12 +1,9 @@
 local ServerScriptService = game:GetService("ServerScriptService")
 
-local gorp = require("@packages/gorp")
 local ecrx = require("@shared/ecrx")
 
 local server = ServerScriptService.Server
 local systems = server.systems
-
-local scheduler = gorp.scheduler("server")
 
 --[[
     Systems that are part of your gameloop, to be scheduled by the scheduler.
@@ -24,12 +21,12 @@ local scheduler = gorp.scheduler("server")
     systems.john -- runs every other other frame (i=3)
     ```
 ]]
-local loop = ecrx.gameloop(scheduler, {
-    {i = 1},
-    systems.player,
-    systems.replicate
-})
+-- local loop = ecrx.gameloop(scheduler, {
+--     {i = 1},
+--     systems.player,
+--     systems.replicate
+-- })
 
 return function(dt)
-    loop(dt)
+    -- loop(dt)
 end
