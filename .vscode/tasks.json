@@ -73,9 +73,9 @@
         {
             "label": "rojo serve",
             "type": "shell",
-            "command": "rojo serve ${workspaceFolder}/darklua.project.json",
+            "command": "rojo serve ${workspaceFolder}/sync.project.json",
             "windows": {
-                "command": "rojo serve ${workspaceFolder}\\darklua.project.json",
+                "command": "rojo serve ${workspaceFolder}\\sync.project.json",
                 "options": {
                     "shell": {
                         "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -184,9 +184,9 @@
         {
             "label": "rojo sourcemap",
             "type": "shell",
-            "command": "rojo sourcemap -o ${workspaceFolder}/sourcemap.json",
+            "command": "rojo sourcemap ./sourcemap.project.json -o ${workspaceFolder}/sourcemap.json",
             "windows": {
-                "command": "rojo sourcemap -o ${workspaceFolder}\\sourcemap.json",
+                "command": "rojo sourcemap .\\sourcemap.project.json -o ${workspaceFolder}\\sourcemap.json",
                 "options": {
                     "shell": {
                         "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",

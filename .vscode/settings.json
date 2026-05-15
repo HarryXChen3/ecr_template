@@ -1,5 +1,6 @@
 {
-    "luau-lsp.types.definitionFiles": [
-        "typedefs.luau"
-    ]
+    "luau-lsp.types.definitionFiles": {
+        "typedefs": "typedefs.luau"
+    },
+    "luau-lsp.sourcemap.rojoProjectFile": "sourcemap.project.json"
 }
